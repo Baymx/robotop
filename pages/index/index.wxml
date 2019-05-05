@@ -1,0 +1,154 @@
+<!--index.wxml-->
+<view class='container'>
+<view class='nav'>
+  <view class='navBar' bindtap='shouye'>
+  <view class='navImg1'>
+  <image src='../../images/icon_shouye_xuanzhong@2x.png'></image>
+  </view>
+  <view class='a'>首页</view>
+  </view>
+  <view class='navBar' bindtap='yicheng'>
+  <view class='navImg2'>
+  <image src='../../images/icon_yicheng_weixuanzhong.png'></image>
+  </view>
+  <view>议程</view>  
+  </view>
+  <view class='navBar s' bindtap='jiaotong'>
+  <view class='navImg3'>
+  <image src='../../images/icon_jiaotong@2x.png'></image>
+  </view>
+  <view>交通</view>  
+  </view>
+  <view class='navBar' bindtap='zhusu'>
+  <view class='navImg4'>
+  <image src='../../images/icon_zhusu_weixuanzhong.png'></image>
+  </view>
+  <view>住宿</view>  
+  </view>
+  <view class='navBar' bindtap='liuyan'>
+  <view class='navImg5'>
+  <image src='../../images/icon_liuyan.png'></image>
+  </view>
+  <view>留言</view>
+  </view>
+</view>
+<!--banner图  -->
+<swiper class="swiper index-swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000" circular="true" >  
+   <block wx:for="{{imgUrls}}" wx:for-index="index">  
+    <swiper-item>  
+      <image src="{{item.picture}}" class="slide-image" mode="aspectFill"/>
+    </swiper-item>  
+   </block> 
+</swiper>
+ <view class="dots"> 
+   <block wx:for="{{slider}}" wx:key="unique"> 
+    <view class="dot {{index == swiperCurrent ? ' active' : ''}}" bindtap="chuangEvent" id="{{index}}">{{index+1}}</view> 
+   </block> 
+</view> 
+ <view bindtap='xiaoxi' style='z-index:999;width:100rpx;height:100rpx;position:absolute;top:0rpx;'><image src='../../images/icon_naozhong@2x.png'></image>
+ <view style='position:absolute;top:10rpx;left:60rpx;background-color:red;color:#fff;border-radius:50%;width:35rpx;height:35rpx;text-align:center;line-height:35rpx;font-size:28rpx;' class="{{wei == 0 ? 'none' : ''}}">{{wei}}</view>
+ </view> 
+<!--公告  -->
+  <view class='notice' >
+  <view class='noticeImg'>
+   <image src='../../images/icon_tongzhi@2x.png'></image>
+  </view>
+  <swiper style="display:inline-block;width:650rpx;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#666666;height:90rpx !important;" class="swiper index-swiper" autoplay="true" circular="true" vertical="true" interval="5000" duration="1000">  
+   <block wx:for="{{notices}}" wx:for-index="index">  
+    <swiper-item>  
+      <view bindtap='xiaoxi' style="display:inline-block;width:650rpx;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#666666;">{{item.title}}</view>
+    </swiper-item>  
+   </block> 
+</swiper>
+    
+  </view>
+<!--图标  -->
+<view class='iconContainer'>
+  <view class='icon' bindtap='shouye'>
+  <view class='iconImg'>
+  <image src='../../images/icon_shouye_tubiao@2x.png'></image>
+  </view>
+  首页
+  </view>
+  <view class='icon' bindtap='yicheng'>
+  <view class='iconImg'>
+  <image src='../../images/icon_yicheng_tubiao@2x.png'></image>
+  </view>
+  议程
+  </view>
+  <view class='icon' bindtap='jiaotong'>
+  <view class='iconImg'>
+  <image src='../../images/icon_jiaotong_tubiao@2x.png'></image>
+  </view>
+  交通
+  </view>
+  <view class='icon' bindtap='zhusu'>
+  <view class='iconImg'>
+  <image src='../../images/icon_zhusu_tubiao@2x.png'></image>
+  </view>
+  住宿
+  </view>
+  <view class='icon' bindtap='liuyan'>
+  <view class='iconImg'>
+  <image src='../../images/icon_liuyan_tubiao@2x.png'></image>
+  </view>
+  留言
+  </view>
+</view>
+
+<!--会议内容-->
+<view class='content'>
+  <view class='conTitle'>{{meeting.name}}</view>
+  <text class='conText'>{{meeting.introduce}}</text>
+  <view class='conImg'>
+    <view class='c'>
+    <image src='{{meeting.picture}}'></image>
+    </view>
+
+    <view class='c'>
+    <image src='{{meeting.picture2}}'></image>
+    </view>
+
+    <view class='c'>
+    <image src='{{meeting.picture3}}'></image>
+    </view>
+
+  </view>
+  <button class='more' bindtap='more'>
+  了解更多
+  </button>
+</view>
+<!-- 了解 -->
+<view class='know'>
+  <view class='know1' bindtap='know1'>
+  <image src="{{urlss}}"></image>
+  </view>
+  <view class='know1' bindtap='know2'>
+  <image src="{{urlsss}}"></image>
+  </view>
+</view>
+
+<view class='news'>新闻&动态</view>
+<view class='newsEn'>News information</view>
+
+<view  wx:for="{{news}}">
+<view class='newsList' data-id="{{item.id}}" bindtap='dongtai'>
+  <view class='leftImg'>
+  <image src='{{item.picture}}'></image>
+  </view>
+  <view class='rightCon'>
+      <view class='rightTitle'>{{item.title}}</view>
+      <text class='rightText'>{{item.introduce}}</text>
+      <view class='time'>
+        <text>{{item.createTime}}</text>
+        <!-- <text style='margin-left:10rpx;'>12:23</text> -->
+      </view>
+  </view>
+  </view>
+</view>
+
+
+
+<view style='height:180rpx;'></view>
+</view>
+

@@ -1,0 +1,5 @@
+<!--pages/warm/warm.wxml-->
+<view class='textContainer'>
+{{texts}}
+</view>
+

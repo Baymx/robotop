@@ -1,0 +1,12 @@
+/* pages/warm/warm.wxss */
+page{
+  padding-top: 36rpx;
+}
+.textContainer{
+  padding-left: 24rpx;
+  padding-right:24rpx;
+  font-size: 28rpx;
+  line-height: 56rpx;
+  color: #333333;
+  text-indent: 2em; 
+}

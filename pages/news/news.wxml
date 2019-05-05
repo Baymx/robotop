@@ -1,0 +1,11 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class='news'>
+<view class="title">{{title}}</view>
+<view class="time">
+<text class='sss'>{{ri}}</text>
+<text class='sss'>{{shi}}</text>
+</view>
+<view style="margin-left:5rpx;margin-rigth:5rpx;">
+<template is="wxParse" data="{{wxParseData:news.nodes}}" />
+</view>
+</view>

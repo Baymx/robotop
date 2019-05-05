@@ -1,0 +1,94 @@
+/* pages/agenda/agenda.wxss */
+.container{
+  width: 100%;
+}
+.title{
+  display: flex;  
+  white-space: nowrap;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-top: 1rpx solid #e5e5e5;
+  border-bottom: 1rpx solid #e5e5e5;
+  box-shadow: 2rpx 2rpx #e5e5e5;
+  position: relative;
+}
+.none{
+  display: none;
+}
+.list{
+  width: 250rpx;
+  height: 100rpx; 
+  line-height: 100rpx;
+ display: inline-block;
+  text-align: center;
+  font-size: 30rpx;
+  color: #333333;
+  position: relative;
+  right:25rpx;
+}
+.line{
+  display: inline-block;
+  width:82rpx;
+  height:2rpx;
+  background-color:#BFBFBF; 
+  position: relative;
+  bottom: 10rpx;
+}
+.active{
+  border: 1rpx solid #017FF7;
+  border-radius: 10rpx;
+  color: #017FF7;
+  width: 158rpx;
+}
+.p{
+/* width: 158rpx; */
+  height: 52rpx;
+  line-height: 52rpx;
+  display: inline-block;
+}
+.textTitle{
+  text-align:center;
+  font-size: 30rpx;
+  color: #333333;
+  font-weight: 600;
+  margin-top: 36rpx;
+  margin-bottom: 70rpx;
+}
+.imgCon{
+  width: 650rpx;
+  margin: auto;
+}
+image{
+  width: 100%;
+}
+.back{
+  height: 100vh;
+  width: 100%;
+  background-color: #F5F5F5;
+}
+.messList{
+  width: 710rpx;
+  background-color: #ffffff;
+  min-height: 260rpx;
+  margin: auto;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+  padding-top: 30rpx;
+  box-shadow: 2rpx 2rpx 4rpx 4rpx #EBEBEB;
+  padding-bottom: 20rpx;
+}
+.messTitle{
+  text-align:center;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.conmmon{
+  color:#666666;
+  font-size: 26rpx;
+  width: 670rpx;
+  margin: auto;
+  line-height: 52rpx;
+}
+.messTime{
+  margin-top: 35rpx;
+}

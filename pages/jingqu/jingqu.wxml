@@ -1,0 +1,5 @@
+<!--pages/jingqu/jingqu.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class='textContainer'>
+<template is = "wxParse" data="{{wxParseData:more.nodes}}" />
+</view>

@@ -1,0 +1,178 @@
+<!--pages/traffic/traffic.wxml-->
+<view class='nav'>
+  <view class='navBar' bindtap='shouye'>
+  <view class='navImg1'>
+  <image src='../../images/icon_shouye_weixuanzhong.png' mode='widthFix'></image>
+  </view>
+  <view>首页</view>
+  </view>
+  <view class='navBar' bindtap='yicheng'>
+  <view class='navImg2'>
+  <image src='../../images/icon_yicheng_weixuanzhong.png' mode='widthFix'></image>
+  </view>
+  <view>议程</view>  
+  </view>
+  <view class='navBar s' bindtap='jiaotong'>
+  <view class='navImg3'>
+  <image src='../../images/icon_jiaotong@2x.png' mode='widthFix'></image>
+  </view>
+  <view class='a'>交通</view>  
+  </view>
+  <view class='navBar' bindtap='zhusu'>
+  <view class='navImg4'>
+  <image src='../../images/icon_zhusu_weixuanzhong.png' mode='widthFix'></image>
+  </view>
+  <view>住宿</view>  
+  </view>
+  <view class='navBar' bindtap='liuyan'>
+  <view class='navImg5'>
+  <image src='../../images/icon_liuyan.png' mode='widthFix'></image>
+  </view>
+  <view>留言</view>
+  </view>
+</view>
+<view>
+  <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+     <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">报到点</view>
+    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">会场</view>
+    <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">展馆</view>
+    <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">摆渡车</view>
+    <view class="tab-item {{currentTab==4?'active':''}}" data-current="4" bindtap="swichNav">酒店</view>
+    <!-- <view class="tab-item {{currentTab==4?'active':''}}" data-current="4" bindtap="swichNav">周边游</view>  -->
+    <!-- <view class="tab-item {{currentTab==4?'active':''}}" data-current="4" bindtap="swichNav">报到点</view> -->
+  </scroll-view>
+  <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+    <swiper-item wx:for="{{[0]}}">
+      <scroll-view scroll-y="true" class="scoll-h">
+        <view style='padding:20rpx;'>
+          <view class='ht-box'wx:for='{{around}}'>
+            <view class='bt-box-group clearfix'  >
+              <image src='{{item.picture}}'></image>
+              <view class='bt-box-rt-wz' bindtap='gomore'data-id="{{item.id}}">
+                <text class='tt'>{{item.name}}</text>
+                <text class='address'>{{item.scenIntro}}</text>
+              </view>
+              <view class='zby-address'>
+                 <text>{{item.address}}</text>
+                  <image data-latitude="{{item.latitude}}" data-longitude="{{item.longitude}}" bindtap='addressGo' data-name="{{item.address}}" class='address-img' src='../../images/icon_dizhi.png'></image>
+              </view>
+            </view>
+            
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item wx:for="{{[1]}}">
+      <scroll-view scroll-y="true" class="scoll-h">
+        <view style='padding:20rpx;'>
+          <view class='ht-box'>
+            <view class='ht-box-tit'>
+              <image src='../../images/icoc_zhuhuichang.png'></image>
+              <text>主会场</text>
+            </view>
+            <view class='bt-box-group clearfix'  wx:for="{{main}}">
+              <image src='{{item.picture}}'></image>
+              <view class='bt-box-rt-wz'>
+                <text class='tt'>{{item.name}}</text>
+                <text class='address'>{{item.address}}</text>
+                <image data-latitude="{{item.latitude}}" data-longitude="{{item.longitude}}" bindtap='addressGo' data-name="{{item.address}}" class='address-img' src='../../images/icon_dizhi.png'></image>
+              </view>
+            </view>
+          </view>
+          <view class='ht-box'>
+            <view class='ht-box-tit'>
+              <image src='../../images/icon_fenluntan.png'></image>
+              <text>分论坛</text>
+            </view>
+            <view class='bt-box-group clearfix' wx:for="{{sessions}}">
+              <image src='{{item.picture}}'></image>
+              <view class='bt-box-rt-wz'>
+                <text class='tt'>{{item.name}}</text>
+                <text class='address'>{{item.address}}</text>
+                <image data-latitude="{{item.latitude}}" data-longitude="{{item.longitude}}" bindtap='addressGo' data-name="{{item.address}}" class='address-img' src='../../images/icon_dizhi.png'></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item wx:for="{{[2]}}">
+      <scroll-view scroll-y="true" class="scoll-h">
+        <view style='padding:20rpx;'>
+          <view class='ht-box'>
+            <view class='ht-box-tit'>
+              <image src='../../images/icon_zhanguan.png'></image>
+              <text>展馆</text>
+            </view>
+            <view class='bt-box-group clearfix' wx:for='{{pavilion}}'>
+              <image src='{{item.picture}}'></image>
+              <view class='bt-box-rt-wz'>
+                <text class='tt'>{{item.name}}</text>
+                <text class='address'>{{item.address}}</text>
+                <image data-latitude="{{item.latitude}}" data-longitude="{{item.longitude}}" bindtap='addressGo' data-name="{{item.address}}" class='address-img' src='../../images/icon_dizhi.png'></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item wx:for="{{[3]}}">
+      <scroll-view scroll-y="true" class="scoll-h">
+        <view style='padding:20rpx;'>
+          <view class='ht-box'>
+            <view class='ht-box-tit'>
+              <image src='../../images/icon_baiduche.png'></image>
+              <text>摆渡车</text>
+            </view>
+            <view class='bt-box-group clearfix' wx:for='{{cars}}'>
+              <image src='{{item.picture}}'></image>
+              <view class='bt-box-rt-wz'>
+                <text class='tt'>{{item.name}}</text>
+                <text class='address'>{{item.address}}</text>
+                <image data-latitude="{{item.latitude}}" data-longitude="{{item.longitude}}" bindtap='addressGo' data-name="{{item.address}}" class='address-img' src='../../images/icon_dizhi.png'></image>
+              </view>
+            </view>
+           
+            
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item wx:for="{{[4]}}">
+      <scroll-view scroll-y="true" class="scoll-h">
+        <view style='padding:20rpx;'>
+          <view class='ht-box'>
+            <view class='ht-box-tit'>
+              <image src='../../images/icon_jiudian.png'></image>
+              <text>酒店</text>
+            </view>
+            <view class='bt-box-group clearfix' wx:for='{{hotel}}'>
+              <image src='{{item.picture}}'></image>
+              <view class='bt-box-rt-wz'>
+                <text class='tt'>{{item.name}}</text>
+                <text class='address'>{{item.address}}</text>
+                <image data-latitude="{{item.latitude}}" data-longitude="{{item.longitude}}" bindtap='addressGo' data-name="{{item.address}}" class='address-img' src='../../images/icon_dizhi.png'></image>
+              </view>
+            </view>
+          </view>
+          <view class='ht-box'>
+            <view class='ht-box-tit'>
+              <image src='../../images/icon_jiudian2.png'></image>
+              <text>接站点</text>
+            </view>
+            <view class='bt-box-group clearfix' wx:for='{{Pickup}}'>
+              <image src='{{item.picture}}'></image>
+              <view class='bt-box-rt-wz'>
+                <text class='tt'>{{item.name}}</text>
+                <text class='address'>{{item.address}}</text>
+                <image data-latitude="{{item.latitude}}" data-longitude="{{item.longitude}}" bindtap='addressGo' data-name="{{item.address}}" class='address-img' src='../../images/icon_dizhi.png'></image>
+              </view>
+            </view>          
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    
+  </swiper>
+</view>
+

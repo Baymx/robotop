@@ -1,0 +1,17 @@
+<!--pages/message/message.wxml-->
+<view class='container'>
+  <view  wx:for="{{message}}">
+  <view class='messList' data-index="{{item.id}}" bindtap='xiangxi'>
+    <view class='header'>
+    <image class='messImg' src='../../images/icon_xitongxiaoxi@2x.png'></image>
+    <text>系统消息</text>
+    <view class= "none {{item.state != 1 ? '':'sure'}}"></view>
+    </view>
+    <view class='time'>
+      <text>{{item.sendTime}}</text>
+      <text></text>
+    </view>
+    <text class='messText'>{{item.content}}</text>
+  </view>
+  </view>
+ </view>

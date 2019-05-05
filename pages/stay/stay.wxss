@@ -1,0 +1,7 @@
+/* pages/stay/stay.wxss */
+  @import "/wxParse/wxParse.wxss";    
+.container{
+   width: 96%; 
+   margin: auto;
+  padding-top: 20rpx;
+}

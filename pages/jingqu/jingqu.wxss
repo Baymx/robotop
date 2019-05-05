@@ -1,0 +1,6 @@
+/* pages/jingqu/jingqu.wxss */
+@import "/wxParse/wxParse.wxss";  
+.textContainer{
+  margin: auto;
+  width: 96%;
+}

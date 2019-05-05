@@ -1,0 +1,62 @@
+<!--pages/messages/messages.wxml-->
+<view class='nav'>
+  <view class='navBar' bindtap='shouye'>
+  <view class='navImg1'>
+  <image src='../../images/icon_shouye_weixuanzhong.png'></image>
+  </view>
+  <view>首页</view>
+  </view>
+  <view class='navBar' bindtap='yicheng'>
+  <view class='navImg2'>
+  <image src='../../images/icon_yicheng_weixuanzhong.png'></image>
+  </view>
+  <view>议程</view>  
+  </view>
+  <view class='navBar s' bindtap='jiaotong'>
+  <view class='navImg3'>
+  <image src='../../images/icon_jiaotong@2x.png'></image>
+  </view>
+  <view>交通</view>  
+  </view>
+  <view class='navBar' bindtap='zhusu'>
+  <view class='navImg4'>
+  <image src='../../images/icon_zhusu_weixuanzhong.png'></image>
+  </view>
+  <view>住宿</view>  
+  </view>
+  <view class='navBar' bindtap='liuyan'>
+  <view class='navImg5'>
+  <image src='../../images/xx.png'></image>
+  </view>
+  <view class='a'>留言</view>
+  </view>
+</view>
+<view class='messages-box' hidden="{{lg!==0}}">
+    <view class='message-group clearfix' wx:for="{{messages}}">
+        <view class='left-userimg'>
+           <image  src='{{item.customer.picture}}'></image>
+        </view>
+        <view class='right-username'>
+            <view class='top-name-time-like'>
+                <view class='top-tit'><text>{{item.customer.name}}</text><text class = "like-num {{item.praiseNum != null ?'':'nones'}}">{{item.praiseNum}}</text><image data-id="{{item.id}}" data-praise="{{item.praise}}" bindtap='zan' class='clickoff' src="{{item.praise == 1 ?'../../images/icon_dianzan_yi.png':'../../images/icon_dianzan_wei.png'}}"></image></view>
+                <view class='top-time'>{{item.createTime}}</view>
+                <view class='top-info'>{{item.message}}</view>
+            </view>
+            <view class="top-name-time-like gf {{item.answer == null ? 'none': ''}}" >
+                <view class='top-tit'><text>官方回复</text></view>
+                <view class='top-time'>{{item.answerTime}}</view>
+                <view class='top-info'>{{item.answer}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class='liu' bindtap='liu'>留言</view>
+<view class='leaveingmessage' hidden="{{lg!==1}}">
+  <form bindsubmit="bindFormSubmit">
+  <textarea placeholder='留言将由小程序筛选后显示' name="textarea"></textarea>
+  <button form-type="submit" class='leaving-btn'>
+    <text >提交</text>
+  </button>
+  </form>
+</view>

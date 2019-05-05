@@ -1,0 +1,28 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/traffic/traffic",
+    "pages/stay/stay",
+    "pages/agenda/agenda",
+    "pages/message/message",
+    "pages/warm/warm",
+    "pages/jingqu/jingqu",
+    "pages/meeting/meeting",
+    "pages/messages/messages",
+    "pages/leaveingmessage/leaveingmessage",
+    "pages/news/news",
+    "pages/know2/know2"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "需要获取您的地理位置,请确认授权,否则地图功能将无法使用"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "中国机器人峰会",
+    "navigationBarTextStyle": "black"
+  }
+  
+}

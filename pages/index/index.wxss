@@ -1,0 +1,224 @@
+/**index.wxss**/
+page{
+  background: #f5f5f5;
+}
+image{
+  width: 100%;
+  height: 100%;
+}
+.none{
+  display: none;
+}
+.swiper {
+ width: 100%;
+ height: 285rpx;
+}
+.swiper image {
+ height: 100%;
+ width: 100%;
+}
+.swiper-container .dots{ 
+ position: absolute; 
+ right: 40rpx; 
+ bottom: 20rpx; 
+ display: flex; 
+ justify-content: center; 
+} 
+.swiper-container .dots .dot{ 
+ margin: 0 10rpx; 
+ width: 28rpx; 
+ height: 28rpx; 
+ background: #fff; 
+ border-radius: 50%; 
+ transition: all .6s; 
+ font: 300 18rpx/28rpx "microsoft yahei"; 
+ text-align: center; 
+} 
+.swiper-container .dots .dot.active{ 
+ background: #f80; 
+ color:#fff; 
+}
+
+.imgContainer{
+  width: 100%;
+  height: 280rpx;
+}
+.notice{
+  font-size: 28rpx;
+  color: #666666;
+  background-color: white;
+  height: 90rpx;
+  padding-left: 40rpx;
+  padding-top: 10rpx;
+   line-height: 90rpx;   
+}
+.noticeImg{
+  display: inline-block;
+  float: left;
+  width: 60rpx;
+  height:60rpx;
+  position: relative;
+  top:15rpx;
+}
+.iconContainer{
+  width: 710rpx;
+  height:200rpx;
+  border-radius: 10rpx;
+  background-color: #ffffff;
+  margin: auto;
+  margin-top: 20rpx;
+  box-shadow: 2rpx 2rpx 4rpx 4rpx #EBEBEB;
+  display: flex;
+}
+.icon{
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  font-size: 26rpx;
+  color:#333333;
+  padding-top: 15rpx;
+}
+.iconImg{
+  width: 120rpx;
+  height: 120rpx;
+  margin: auto;
+  margin-bottom: 5rpx;
+}
+
+.content{
+  width: 710rpx;
+  height: 536rpx;
+  border-radius: 10rpx;
+  background-color: #ffffff;
+  margin: auto;
+  margin-top: 20rpx;
+  box-shadow: 2rpx 2rpx 4rpx 4rpx #EBEBEB;
+  padding-top: 30rpx;
+}
+.conTitle{
+  font-size: 30rpx;
+  color: #000000;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 18rpx;
+}
+.conText{
+  width: 670rpx;
+  margin:auto;
+  font-size: 24rpx;
+  color:#666666;
+  text-indent: 2em;
+  min-height: 144rpx;
+  line-height:48rpx;
+  margin-bottom: 18rpx;
+  text-align: justify;
+  display:-webkit-box;
+  word-break:break-all;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:3;
+}
+.conImg{
+  width: 670rpx;
+  margin:auto;
+  display: flex;
+  justify-content:space-between;
+  margin-bottom: 52rpx;
+}
+.c{
+  width: 214rpx;
+  height: 150rpx;
+  border-radius: 10rpx;
+}
+
+.more{
+  width: 230rpx;
+  height: 70rpx;
+  border-radius: 35rpx;
+  border: 1rpx solid #017FF7;
+  color:#017FF7;
+  font-size: 28rpx;
+}
+
+.know{
+  width: 710rpx;
+  height: 150rpx;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+.know1{
+  width: 350rpx;
+  height:150rpx;
+  border-radius: 10rpx;
+}
+.news{
+  text-align: center;
+  font-size: 30rpx;
+  color: #000000;
+  margin-top: 50rpx;
+}
+.newsEn{
+  text-align: center;
+  font-size: 24rpx;
+  color:#999999;
+  margin-top:10rpx;
+  margin-bottom: 30rpx;
+}
+
+.newsList{
+  height: 200rpx;
+  width: 710rpx;
+  margin: auto;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+  box-shadow: 2rpx 2rpx 4rpx 4rpx #EBEBEB;
+  display: flex;
+  margin-bottom:20rpx;
+}
+.leftImg{
+  width: 278rpx;
+  height: 200rpx;
+}
+.rightCon{
+  margin-left: 26rpx;
+  width: 396rpx;
+}
+.rightTitle{
+  display: inline-block;
+  font-size: 26rpx;
+  color: #000000;
+  margin-top: 12rpx;
+  margin-bottom: 16rpx;
+  font-weight: 600;
+  height:30rpx;
+  line-height: 30rpx;
+  width: 380rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:1;
+
+}
+.rightText{
+  font-size: 24rpx;
+  width: 384rpx;
+  color:#666666;
+  line-height: 48rpx;
+  min-height: 96rpx;
+  text-align: justify;
+  display:-webkit-box;
+  word-break:break-all;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+}
+.time{
+  color:#999999;
+  font-size: 22rpx;
+}
+

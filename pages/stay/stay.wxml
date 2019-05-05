@@ -1,0 +1,39 @@
+<!--pages/stay/stay.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class='nav'>
+  <view class='navBar' bindtap='shouye'>
+  <view class='navImg1'>
+  <image src='../../images/icon_shouye_weixuanzhong.png' mode='widthFix'></image>
+  </view>
+  <view>首页</view>
+  </view>
+  <view class='navBar' bindtap='yicheng'>
+  <view class='navImg2'>
+  <image src='../../images/icon_yicheng_weixuanzhong.png' mode='widthFix'></image>
+  </view>
+  <view>议程</view>  
+  </view>
+  <view style='word-break: normal !important;overflow: visible !important;' class='navBar s' bindtap='jiaotong'>
+  <view style='word-break: normal !important;overflow: visible !important;' class='navImg3'>
+  <image src='../../images/icon_jiaotong@2x.png' mode='widthFix'></image>
+  </view>
+  <view>交通</view>  
+  </view>
+  <view class='navBar' bindtap='zhusu'>
+  <view class='navImg4'>
+  <image src='../../images/icon_zhusu_xuanzhong@2x.png' mode='widthFix'></image>
+  </view>
+  <view class='a'>住宿</view>  
+  </view>
+  <view class='navBar' bindtap='liuyan'>
+  <view class='navImg5'>
+  <image src='../../images/icon_liuyan.png' mode='widthFix'></image>
+  </view>
+  <view>留言</view>
+  </view> 
+</view>
+<view class='container'>
+ <template is="wxParse" data="{{wxParseData:hotels.nodes}}" />
+<view style='height:180rpx;'></view>
+</view>
+

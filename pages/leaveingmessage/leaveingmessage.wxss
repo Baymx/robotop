@@ -1,0 +1,4 @@
+/* pages/leaveingmessage/leaveingmessage.wxss */
+page{
+  background: #f5f5f5;
+}

@@ -1,0 +1,26 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view >
+    <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+        <view class="tab-item {{currentTab==0?'active':''}}"  data-current="0" bindtap="swichNav">会议简介</view>
+        <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">参会专家</view>
+        <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">组织架构</view>
+    </scroll-view>
+    <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab"
+     style="height:{{winHeight}}rpx">
+        <swiper-item wx:for="{{[0]}}">
+            <scroll-view scroll-y="true" class="scoll-h" >
+               <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+            </scroll-view>
+        </swiper-item>
+         <swiper-item wx:for="{{[1]}}">
+            <scroll-view scroll-y="true" class="scoll-h" >
+                <template is="wxParse" data="{{wxParseData:expert.nodes}}" />
+            </scroll-view>
+        </swiper-item>
+         <swiper-item wx:for="{{[2]}}">
+            <scroll-view scroll-y="true" class="scoll-h" >
+                 <template is="wxParse" data="{{wxParseData:organization.nodes}}" />
+            </scroll-view>
+        </swiper-item>
+    </swiper>
+</view>

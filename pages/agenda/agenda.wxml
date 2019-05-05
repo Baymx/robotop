@@ -1,0 +1,420 @@
+<!--pages/agenda/agenda.wxml-->
+<view class='nav'>
+  <view class='navBar' bindtap='shouye'>
+  <view class='navImg1'>
+  <image src='../../images/icon_shouye_weixuanzhong.png' mode='widthFix'></image>
+  </view>
+  <view>首页</view>
+  </view>
+  <view class='navBar' bindtap='yicheng'>
+  <view class='navImg2'>
+  <image src='../../images/icon_yicheng_xuanzhong.png' mode='widthFix'></image>
+  </view>
+  <view class='a'>议程</view>  
+  </view>
+  <view class='navBar s' bindtap='jiaotong'>
+  <view class='navImg3'>
+  <image src='../../images/icon_jiaotong@2x.png' mode='widthFix'></image>
+  </view>
+  <view>交通</view>  
+  </view>
+  <view class='navBar' bindtap='zhusu'>
+  <view class='navImg4'>
+  <image src='../../images/icon_zhusu_weixuanzhong.png' mode='widthFix'></image>
+  </view>
+  <view>住宿</view>  
+  </view>
+  <view class='navBar' bindtap='liuyan'>
+  <view class='navImg5'>
+  <image src='../../images/icon_liuyan.png' mode='widthFix'></image>
+  </view>
+  <view>留言</view>
+  </view>
+</view>
+<view class='container'>
+  <scroll-view scroll-x="true" class='title'>
+      <view class="list"  wx:for="{{navbar}}" wx:key="unique">  
+        <view class='line'></view>
+        <view bindtap="navbarTap" data-idx="{{index}}" class="p {{currentTab==index ? 'active' : ''}}">{{item}}</view>
+        <view class='line'></view>        
+      </view> 
+  </scroll-view>
+<view>
+
+    <view hidden="{{currentTab!==0}}">
+        <view class='textTitle'>会议议程</view>
+        <view class='imgCon'><image mode="widthFix" src='{{agenda[0].picture}}'></image></view>
+    </view> 
+
+    <view class='back' hidden="{{currentTab !== 1}}">
+      <view style='height:1rpx;width:100%;'></view>
+      <view class='messList' wx:for="{{agenda[1].agendaDetails}}">
+        <view class='messTitle'>{{item.name}}</view>
+        <view class="messTime conmmon {{item.message1 ==null?'none':''}}">{{item.message1}}</view>
+        <view class="messPlace conmmon {{item.message2 ==null?'none':''}}">{{item.message2}}</view>
+        <view class="messPerson conmmon {{item.message3 ==null?'none':''}}">{{item.message3}}</view>
+        <view class="messPerson conmmon {{item.message4 ==null?'none':''}}">{{item.message4}}</view>
+        <view class="messPerson conmmon {{item.message5 ==null?'none':''}}">{{item.message5}}</view>
+        <view class="messPerson conmmon {{item.message6 ==null?'none':''}}">{{item.message6}}</view>
+        <view class="messPerson conmmon {{item.message7 ==null?'none':''}}">{{item.message7}}</view>
+        <view class="messPerson conmmon {{item.message8 ==null?'none':''}}">{{item.message8}}</view>
+        <view class="messPerson conmmon {{item.message9 ==null?'none':''}}">{{item.message9}}</view>
+        <view class="messPerson conmmon {{item.message10 ==null?'none':''}}">{{item.message10}}</view>
+        <view class="messPerson conmmon {{item.message11 ==null?'none':''}}">{{item.message11}}</view>
+        <view class="messPerson conmmon {{item.message12 ==null?'none':''}}">{{item.message12}}</view>
+        <view class="messPerson conmmon {{item.message13 ==null?'none':''}}">{{item.message13}}</view>
+        <view class="messPerson conmmon {{item.message14 ==null?'none':''}}">{{item.message14}}</view>
+        <view class="messPerson conmmon {{item.message15 ==null?'none':''}}">{{item.message15}}</view>
+        <view class="messPerson conmmon {{item.message16 ==null?'none':''}}">{{item.message16}}</view>
+        <view class="messPerson conmmon {{item.message17 ==null?'none':''}}">{{item.message17}}</view>
+        <view class="messPerson conmmon {{item.message18 ==null?'none':''}}">{{item.message18}}</view>
+        <view class="messPerson conmmon {{item.message19 ==null?'none':''}}">{{item.message19}}</view>
+        <view class="messPerson conmmon {{item.message20 ==null?'none':''}}">{{item.message20}}</view> 
+        <view class="messPerson conmmon {{item.message21 ==null?'none':''}}">{{item.message21}}</view>
+        <view class="messPerson conmmon {{item.message22 ==null?'none':''}}">{{item.message22}}</view>
+        <view class="messPerson conmmon {{item.message23 ==null?'none':''}}">{{item.message23}}</view>
+        <view class="messPerson conmmon {{item.message24 ==null?'none':''}}">{{item.message24}}</view>
+        <view class="messPerson conmmon {{item.message25 ==null?'none':''}}">{{item.message25}}</view>
+        <view class="messPerson conmmon {{item.message26 ==null?'none':''}}">{{item.message26}}</view>
+        <view class="messPerson conmmon {{item.message27 ==null?'none':''}}">{{item.message27}}</view>
+        <view class="messPerson conmmon {{item.message28 ==null?'none':''}}">{{item.message28}}</view>
+        <view class="messPerson conmmon {{item.message29 ==null?'none':''}}">{{item.message29}}</view>
+        <view class="messPerson conmmon {{item.message30 ==null?'none':''}}">{{item.message30}}</view> 
+      </view>
+    </view>  
+
+  <view class='back' hidden="{{currentTab !== 2}}">
+      <view style='height:1rpx;width:100%;'></view>
+      <view class='messList' wx:for="{{agenda[2].agendaDetails}}">
+        <view class='messTitle'>{{item.name}}</view>
+        <view class="messTime conmmon {{item.message1 ==null?'none':''}}">{{item.message1}}</view>
+        <view class="messPlace conmmon {{item.message2 ==null?'none':''}}">{{item.message2}}</view>
+        <view class="messPerson conmmon {{item.message3 ==null?'none':''}}">{{item.message3}}</view>
+        <view class="messPerson conmmon {{item.message4 ==null?'none':''}}">{{item.message4}}</view>
+        <view class="messPerson conmmon {{item.message5 ==null?'none':''}}">{{item.message5}}</view>
+        <view class="messPerson conmmon {{item.message6 ==null?'none':''}}">{{item.message6}}</view>
+        <view class="messPerson conmmon {{item.message7 ==null?'none':''}}">{{item.message7}}</view>
+        <view class="messPerson conmmon {{item.message8 ==null?'none':''}}">{{item.message8}}</view>
+        <view class="messPerson conmmon {{item.message9 ==null?'none':''}}">{{item.message9}}</view>
+        <view class="messPerson conmmon {{item.message10 ==null?'none':''}}">{{item.message10}}</view>
+        <view class="messPerson conmmon {{item.message11 ==null?'none':''}}">{{item.message11}}</view>
+        <view class="messPerson conmmon {{item.message12 ==null?'none':''}}">{{item.message12}}</view>
+        <view class="messPerson conmmon {{item.message13 ==null?'none':''}}">{{item.message13}}</view>
+        <view class="messPerson conmmon {{item.message14 ==null?'none':''}}">{{item.message14}}</view>
+        <view class="messPerson conmmon {{item.message15 ==null?'none':''}}">{{item.message15}}</view>
+        <view class="messPerson conmmon {{item.message16 ==null?'none':''}}">{{item.message16}}</view>
+        <view class="messPerson conmmon {{item.message17 ==null?'none':''}}">{{item.message17}}</view>
+        <view class="messPerson conmmon {{item.message18 ==null?'none':''}}">{{item.message18}}</view>
+        <view class="messPerson conmmon {{item.message19 ==null?'none':''}}">{{item.message19}}</view>
+        <view class="messPerson conmmon {{item.message20 ==null?'none':''}}">{{item.message20}}</view> 
+        <view class="messPerson conmmon {{item.message21 ==null?'none':''}}">{{item.message21}}</view>
+        <view class="messPerson conmmon {{item.message22 ==null?'none':''}}">{{item.message22}}</view>
+        <view class="messPerson conmmon {{item.message23 ==null?'none':''}}">{{item.message23}}</view>
+        <view class="messPerson conmmon {{item.message24 ==null?'none':''}}">{{item.message24}}</view>
+        <view class="messPerson conmmon {{item.message25 ==null?'none':''}}">{{item.message25}}</view>
+        <view class="messPerson conmmon {{item.message26 ==null?'none':''}}">{{item.message26}}</view>
+        <view class="messPerson conmmon {{item.message27 ==null?'none':''}}">{{item.message27}}</view>
+        <view class="messPerson conmmon {{item.message28 ==null?'none':''}}">{{item.message28}}</view>
+        <view class="messPerson conmmon {{item.message29 ==null?'none':''}}">{{item.message29}}</view>
+        <view class="messPerson conmmon {{item.message30 ==null?'none':''}}">{{item.message30}}</view> 
+      </view>
+  </view> 
+
+<view class='back' hidden="{{currentTab !== 3}}">
+      <view style='height:1rpx;width:100%;'></view>
+      <view class='messList' wx:for="{{agenda[3].agendaDetails}}">
+        <view class='messTitle'>{{item.name}}</view>
+        <view class="messTime conmmon {{item.message1 ==null?'none':''}}">{{item.message1}}</view>
+        <view class="messPlace conmmon {{item.message2 ==null?'none':''}}">{{item.message2}}</view>
+        <view class="messPerson conmmon {{item.message3 ==null?'none':''}}">{{item.message3}}</view>
+        <view class="messPerson conmmon {{item.message4 ==null?'none':''}}">{{item.message4}}</view>
+        <view class="messPerson conmmon {{item.message5 ==null?'none':''}}">{{item.message5}}</view>
+        <view class="messPerson conmmon {{item.message6 ==null?'none':''}}">{{item.message6}}</view>
+        <view class="messPerson conmmon {{item.message7 ==null?'none':''}}">{{item.message7}}</view>
+        <view class="messPerson conmmon {{item.message8 ==null?'none':''}}">{{item.message8}}</view>
+        <view class="messPerson conmmon {{item.message9 ==null?'none':''}}">{{item.message9}}</view>
+        <view class="messPerson conmmon {{item.message10 ==null?'none':''}}">{{item.message10}}</view>
+        <view class="messPerson conmmon {{item.message11 ==null?'none':''}}">{{item.message11}}</view>
+        <view class="messPerson conmmon {{item.message12 ==null?'none':''}}">{{item.message12}}</view>
+        <view class="messPerson conmmon {{item.message13 ==null?'none':''}}">{{item.message13}}</view>
+        <view class="messPerson conmmon {{item.message14 ==null?'none':''}}">{{item.message14}}</view>
+        <view class="messPerson conmmon {{item.message15 ==null?'none':''}}">{{item.message15}}</view>
+        <view class="messPerson conmmon {{item.message16 ==null?'none':''}}">{{item.message16}}</view>
+        <view class="messPerson conmmon {{item.message17 ==null?'none':''}}">{{item.message17}}</view>
+        <view class="messPerson conmmon {{item.message18 ==null?'none':''}}">{{item.message18}}</view>
+        <view class="messPerson conmmon {{item.message19 ==null?'none':''}}">{{item.message19}}</view>
+        <view class="messPerson conmmon {{item.message20 ==null?'none':''}}">{{item.message20}}</view> 
+        <view class="messPerson conmmon {{item.message21 ==null?'none':''}}">{{item.message21}}</view>
+        <view class="messPerson conmmon {{item.message22 ==null?'none':''}}">{{item.message22}}</view>
+        <view class="messPerson conmmon {{item.message23 ==null?'none':''}}">{{item.message23}}</view>
+        <view class="messPerson conmmon {{item.message24 ==null?'none':''}}">{{item.message24}}</view>
+        <view class="messPerson conmmon {{item.message25 ==null?'none':''}}">{{item.message25}}</view>
+        <view class="messPerson conmmon {{item.message26 ==null?'none':''}}">{{item.message26}}</view>
+        <view class="messPerson conmmon {{item.message27 ==null?'none':''}}">{{item.message27}}</view>
+        <view class="messPerson conmmon {{item.message28 ==null?'none':''}}">{{item.message28}}</view>
+        <view class="messPerson conmmon {{item.message29 ==null?'none':''}}">{{item.message29}}</view>
+        <view class="messPerson conmmon {{item.message30 ==null?'none':''}}">{{item.message30}}</view> 
+      </view>
+  </view> 
+
+  <view class='back' hidden="{{currentTab !== 4}}">
+      <view style='height:1rpx;width:100%;'></view>
+      <view class='messList' wx:for="{{agenda[4].agendaDetails}}">
+        <view class='messTitle'>{{item.name}}</view>
+        <view class="messTime conmmon {{item.message1 ==null?'none':''}}">{{item.message1}}</view>
+        <view class="messPlace conmmon {{item.message2 ==null?'none':''}}">{{item.message2}}</view>
+        <view class="messPerson conmmon {{item.message3 ==null?'none':''}}">{{item.message3}}</view>
+        <view class="messPerson conmmon {{item.message4 ==null?'none':''}}">{{item.message4}}</view>
+        <view class="messPerson conmmon {{item.message5 ==null?'none':''}}">{{item.message5}}</view>
+        <view class="messPerson conmmon {{item.message6 ==null?'none':''}}">{{item.message6}}</view>
+        <view class="messPerson conmmon {{item.message7 ==null?'none':''}}">{{item.message7}}</view>
+        <view class="messPerson conmmon {{item.message8 ==null?'none':''}}">{{item.message8}}</view>
+        <view class="messPerson conmmon {{item.message9 ==null?'none':''}}">{{item.message9}}</view>
+        <view class="messPerson conmmon {{item.message10 ==null?'none':''}}">{{item.message10}}</view>
+        <view class="messPerson conmmon {{item.message11 ==null?'none':''}}">{{item.message11}}</view>
+        <view class="messPerson conmmon {{item.message12 ==null?'none':''}}">{{item.message12}}</view>
+        <view class="messPerson conmmon {{item.message13 ==null?'none':''}}">{{item.message13}}</view>
+        <view class="messPerson conmmon {{item.message14 ==null?'none':''}}">{{item.message14}}</view>
+        <view class="messPerson conmmon {{item.message15 ==null?'none':''}}">{{item.message15}}</view>
+        <view class="messPerson conmmon {{item.message16 ==null?'none':''}}">{{item.message16}}</view>
+        <view class="messPerson conmmon {{item.message17 ==null?'none':''}}">{{item.message17}}</view>
+        <view class="messPerson conmmon {{item.message18 ==null?'none':''}}">{{item.message18}}</view>
+        <view class="messPerson conmmon {{item.message19 ==null?'none':''}}">{{item.message19}}</view>
+        <view class="messPerson conmmon {{item.message20 ==null?'none':''}}">{{item.message20}}</view> 
+        <view class="messPerson conmmon {{item.message21 ==null?'none':''}}">{{item.message21}}</view>
+        <view class="messPerson conmmon {{item.message22 ==null?'none':''}}">{{item.message22}}</view>
+        <view class="messPerson conmmon {{item.message23 ==null?'none':''}}">{{item.message23}}</view>
+        <view class="messPerson conmmon {{item.message24 ==null?'none':''}}">{{item.message24}}</view>
+        <view class="messPerson conmmon {{item.message25 ==null?'none':''}}">{{item.message25}}</view>
+        <view class="messPerson conmmon {{item.message26 ==null?'none':''}}">{{item.message26}}</view>
+        <view class="messPerson conmmon {{item.message27 ==null?'none':''}}">{{item.message27}}</view>
+        <view class="messPerson conmmon {{item.message28 ==null?'none':''}}">{{item.message28}}</view>
+        <view class="messPerson conmmon {{item.message29 ==null?'none':''}}">{{item.message29}}</view>
+        <view class="messPerson conmmon {{item.message30 ==null?'none':''}}">{{item.message30}}</view> 
+      </view>
+  </view> 
+
+  <view class='back' hidden="{{currentTab !== 5}}">
+      <view style='height:1rpx;width:100%;'></view>
+      <view class='messList' wx:for="{{agenda[5].agendaDetails}}">
+        <view class='messTitle'>{{item.name}}</view>
+        <view class="messTime conmmon {{item.message1 ==null?'none':''}}">{{item.message1}}</view>
+        <view class="messPlace conmmon {{item.message2 ==null?'none':''}}">{{item.message2}}</view>
+        <view class="messPerson conmmon {{item.message3 ==null?'none':''}}">{{item.message3}}</view>
+        <view class="messPerson conmmon {{item.message4 ==null?'none':''}}">{{item.message4}}</view>
+        <view class="messPerson conmmon {{item.message5 ==null?'none':''}}">{{item.message5}}</view>
+        <view class="messPerson conmmon {{item.message6 ==null?'none':''}}">{{item.message6}}</view>
+        <view class="messPerson conmmon {{item.message7 ==null?'none':''}}">{{item.message7}}</view>
+        <view class="messPerson conmmon {{item.message8 ==null?'none':''}}">{{item.message8}}</view>
+        <view class="messPerson conmmon {{item.message9 ==null?'none':''}}">{{item.message9}}</view>
+        <view class="messPerson conmmon {{item.message10 ==null?'none':''}}">{{item.message10}}</view>
+        <view class="messPerson conmmon {{item.message11 ==null?'none':''}}">{{item.message11}}</view>
+        <view class="messPerson conmmon {{item.message12 ==null?'none':''}}">{{item.message12}}</view>
+        <view class="messPerson conmmon {{item.message13 ==null?'none':''}}">{{item.message13}}</view>
+        <view class="messPerson conmmon {{item.message14 ==null?'none':''}}">{{item.message14}}</view>
+        <view class="messPerson conmmon {{item.message15 ==null?'none':''}}">{{item.message15}}</view>
+        <view class="messPerson conmmon {{item.message16 ==null?'none':''}}">{{item.message16}}</view>
+        <view class="messPerson conmmon {{item.message17 ==null?'none':''}}">{{item.message17}}</view>
+        <view class="messPerson conmmon {{item.message18 ==null?'none':''}}">{{item.message18}}</view>
+        <view class="messPerson conmmon {{item.message19 ==null?'none':''}}">{{item.message19}}</view>
+        <view class="messPerson conmmon {{item.message20 ==null?'none':''}}">{{item.message20}}</view> 
+        <view class="messPerson conmmon {{item.message21 ==null?'none':''}}">{{item.message21}}</view>
+        <view class="messPerson conmmon {{item.message22 ==null?'none':''}}">{{item.message22}}</view>
+        <view class="messPerson conmmon {{item.message23 ==null?'none':''}}">{{item.message23}}</view>
+        <view class="messPerson conmmon {{item.message24 ==null?'none':''}}">{{item.message24}}</view>
+        <view class="messPerson conmmon {{item.message25 ==null?'none':''}}">{{item.message25}}</view>
+        <view class="messPerson conmmon {{item.message26 ==null?'none':''}}">{{item.message26}}</view>
+        <view class="messPerson conmmon {{item.message27 ==null?'none':''}}">{{item.message27}}</view>
+        <view class="messPerson conmmon {{item.message28 ==null?'none':''}}">{{item.message28}}</view>
+        <view class="messPerson conmmon {{item.message29 ==null?'none':''}}">{{item.message29}}</view>
+        <view class="messPerson conmmon {{item.message30 ==null?'none':''}}">{{item.message30}}</view> 
+      </view>
+  </view> 
+
+  <view class='back' hidden="{{currentTab !== 6}}">
+      <view style='height:1rpx;width:100%;'></view>
+      <view class='messList' wx:for="{{agenda[6].agendaDetails}}">
+        <view class='messTitle'>{{item.name}}</view>
+        <view class="messTime conmmon {{item.message1 ==null?'none':''}}">{{item.message1}}</view>
+        <view class="messPlace conmmon {{item.message2 ==null?'none':''}}">{{item.message2}}</view>
+        <view class="messPerson conmmon {{item.message3 ==null?'none':''}}">{{item.message3}}</view>
+        <view class="messPerson conmmon {{item.message4 ==null?'none':''}}">{{item.message4}}</view>
+        <view class="messPerson conmmon {{item.message5 ==null?'none':''}}">{{item.message5}}</view>
+        <view class="messPerson conmmon {{item.message6 ==null?'none':''}}">{{item.message6}}</view>
+        <view class="messPerson conmmon {{item.message7 ==null?'none':''}}">{{item.message7}}</view>
+        <view class="messPerson conmmon {{item.message8 ==null?'none':''}}">{{item.message8}}</view>
+        <view class="messPerson conmmon {{item.message9 ==null?'none':''}}">{{item.message9}}</view>
+        <view class="messPerson conmmon {{item.message10 ==null?'none':''}}">{{item.message10}}</view>
+        <view class="messPerson conmmon {{item.message11 ==null?'none':''}}">{{item.message11}}</view>
+        <view class="messPerson conmmon {{item.message12 ==null?'none':''}}">{{item.message12}}</view>
+        <view class="messPerson conmmon {{item.message13 ==null?'none':''}}">{{item.message13}}</view>
+        <view class="messPerson conmmon {{item.message14 ==null?'none':''}}">{{item.message14}}</view>
+        <view class="messPerson conmmon {{item.message15 ==null?'none':''}}">{{item.message15}}</view>
+        <view class="messPerson conmmon {{item.message16 ==null?'none':''}}">{{item.message16}}</view>
+        <view class="messPerson conmmon {{item.message17 ==null?'none':''}}">{{item.message17}}</view>
+        <view class="messPerson conmmon {{item.message18 ==null?'none':''}}">{{item.message18}}</view>
+        <view class="messPerson conmmon {{item.message19 ==null?'none':''}}">{{item.message19}}</view>
+        <view class="messPerson conmmon {{item.message20 ==null?'none':''}}">{{item.message20}}</view> 
+        <view class="messPerson conmmon {{item.message21 ==null?'none':''}}">{{item.message21}}</view>
+        <view class="messPerson conmmon {{item.message22 ==null?'none':''}}">{{item.message22}}</view>
+        <view class="messPerson conmmon {{item.message23 ==null?'none':''}}">{{item.message23}}</view>
+        <view class="messPerson conmmon {{item.message24 ==null?'none':''}}">{{item.message24}}</view>
+        <view class="messPerson conmmon {{item.message25 ==null?'none':''}}">{{item.message25}}</view>
+        <view class="messPerson conmmon {{item.message26 ==null?'none':''}}">{{item.message26}}</view>
+        <view class="messPerson conmmon {{item.message27 ==null?'none':''}}">{{item.message27}}</view>
+        <view class="messPerson conmmon {{item.message28 ==null?'none':''}}">{{item.message28}}</view>
+        <view class="messPerson conmmon {{item.message29 ==null?'none':''}}">{{item.message29}}</view>
+        <view class="messPerson conmmon {{item.message30 ==null?'none':''}}">{{item.message30}}</view> 
+      </view>
+  </view> 
+
+  <view class='back' hidden="{{currentTab !== 7}}">
+      <view style='height:1rpx;width:100%;'></view>
+      <view class='messList' wx:for="{{agenda[7].agendaDetails}}">
+        <view class='messTitle'>{{item.name}}</view>
+        <view class="messTime conmmon {{item.message1 ==null?'none':''}}">{{item.message1}}</view>
+        <view class="messPlace conmmon {{item.message2 ==null?'none':''}}">{{item.message2}}</view>
+        <view class="messPerson conmmon {{item.message3 ==null?'none':''}}">{{item.message3}}</view>
+        <view class="messPerson conmmon {{item.message4 ==null?'none':''}}">{{item.message4}}</view>
+        <view class="messPerson conmmon {{item.message5 ==null?'none':''}}">{{item.message5}}</view>
+        <view class="messPerson conmmon {{item.message6 ==null?'none':''}}">{{item.message6}}</view>
+        <view class="messPerson conmmon {{item.message7 ==null?'none':''}}">{{item.message7}}</view>
+        <view class="messPerson conmmon {{item.message8 ==null?'none':''}}">{{item.message8}}</view>
+        <view class="messPerson conmmon {{item.message9 ==null?'none':''}}">{{item.message9}}</view>
+        <view class="messPerson conmmon {{item.message10 ==null?'none':''}}">{{item.message10}}</view>
+        <view class="messPerson conmmon {{item.message11 ==null?'none':''}}">{{item.message11}}</view>
+        <view class="messPerson conmmon {{item.message12 ==null?'none':''}}">{{item.message12}}</view>
+        <view class="messPerson conmmon {{item.message13 ==null?'none':''}}">{{item.message13}}</view>
+        <view class="messPerson conmmon {{item.message14 ==null?'none':''}}">{{item.message14}}</view>
+        <view class="messPerson conmmon {{item.message15 ==null?'none':''}}">{{item.message15}}</view>
+        <view class="messPerson conmmon {{item.message16 ==null?'none':''}}">{{item.message16}}</view>
+        <view class="messPerson conmmon {{item.message17 ==null?'none':''}}">{{item.message17}}</view>
+        <view class="messPerson conmmon {{item.message18 ==null?'none':''}}">{{item.message18}}</view>
+        <view class="messPerson conmmon {{item.message19 ==null?'none':''}}">{{item.message19}}</view>
+        <view class="messPerson conmmon {{item.message20 ==null?'none':''}}">{{item.message20}}</view> 
+        <view class="messPerson conmmon {{item.message21 ==null?'none':''}}">{{item.message21}}</view>
+        <view class="messPerson conmmon {{item.message22 ==null?'none':''}}">{{item.message22}}</view>
+        <view class="messPerson conmmon {{item.message23 ==null?'none':''}}">{{item.message23}}</view>
+        <view class="messPerson conmmon {{item.message24 ==null?'none':''}}">{{item.message24}}</view>
+        <view class="messPerson conmmon {{item.message25 ==null?'none':''}}">{{item.message25}}</view>
+        <view class="messPerson conmmon {{item.message26 ==null?'none':''}}">{{item.message26}}</view>
+        <view class="messPerson conmmon {{item.message27 ==null?'none':''}}">{{item.message27}}</view>
+        <view class="messPerson conmmon {{item.message28 ==null?'none':''}}">{{item.message28}}</view>
+        <view class="messPerson conmmon {{item.message29 ==null?'none':''}}">{{item.message29}}</view>
+        <view class="messPerson conmmon {{item.message30 ==null?'none':''}}">{{item.message30}}</view> 
+      </view>
+  </view> 
+
+  <view class='back' hidden="{{currentTab !== 8}}">
+      <view style='height:1rpx;width:100%;'></view>
+      <view class='messList' wx:for="{{agenda[8].agendaDetails}}">
+        <view class='messTitle'>{{item.name}}</view>
+        <view class="messTime conmmon {{item.message1 ==null?'none':''}}">{{item.message1}}</view>
+        <view class="messPlace conmmon {{item.message2 ==null?'none':''}}">{{item.message2}}</view>
+        <view class="messPerson conmmon {{item.message3 ==null?'none':''}}">{{item.message3}}</view>
+        <view class="messPerson conmmon {{item.message4 ==null?'none':''}}">{{item.message4}}</view>
+        <view class="messPerson conmmon {{item.message5 ==null?'none':''}}">{{item.message5}}</view>
+        <view class="messPerson conmmon {{item.message6 ==null?'none':''}}">{{item.message6}}</view>
+        <view class="messPerson conmmon {{item.message7 ==null?'none':''}}">{{item.message7}}</view>
+        <view class="messPerson conmmon {{item.message8 ==null?'none':''}}">{{item.message8}}</view>
+        <view class="messPerson conmmon {{item.message9 ==null?'none':''}}">{{item.message9}}</view>
+        <view class="messPerson conmmon {{item.message10 ==null?'none':''}}">{{item.message10}}</view>
+        <view class="messPerson conmmon {{item.message11 ==null?'none':''}}">{{item.message11}}</view>
+        <view class="messPerson conmmon {{item.message12 ==null?'none':''}}">{{item.message12}}</view>
+        <view class="messPerson conmmon {{item.message13 ==null?'none':''}}">{{item.message13}}</view>
+        <view class="messPerson conmmon {{item.message14 ==null?'none':''}}">{{item.message14}}</view>
+        <view class="messPerson conmmon {{item.message15 ==null?'none':''}}">{{item.message15}}</view>
+        <view class="messPerson conmmon {{item.message16 ==null?'none':''}}">{{item.message16}}</view>
+        <view class="messPerson conmmon {{item.message17 ==null?'none':''}}">{{item.message17}}</view>
+        <view class="messPerson conmmon {{item.message18 ==null?'none':''}}">{{item.message18}}</view>
+        <view class="messPerson conmmon {{item.message19 ==null?'none':''}}">{{item.message19}}</view>
+        <view class="messPerson conmmon {{item.message20 ==null?'none':''}}">{{item.message20}}</view> 
+        <view class="messPerson conmmon {{item.message21 ==null?'none':''}}">{{item.message21}}</view>
+        <view class="messPerson conmmon {{item.message22 ==null?'none':''}}">{{item.message22}}</view>
+        <view class="messPerson conmmon {{item.message23 ==null?'none':''}}">{{item.message23}}</view>
+        <view class="messPerson conmmon {{item.message24 ==null?'none':''}}">{{item.message24}}</view>
+        <view class="messPerson conmmon {{item.message25 ==null?'none':''}}">{{item.message25}}</view>
+        <view class="messPerson conmmon {{item.message26 ==null?'none':''}}">{{item.message26}}</view>
+        <view class="messPerson conmmon {{item.message27 ==null?'none':''}}">{{item.message27}}</view>
+        <view class="messPerson conmmon {{item.message28 ==null?'none':''}}">{{item.message28}}</view>
+        <view class="messPerson conmmon {{item.message29 ==null?'none':''}}">{{item.message29}}</view>
+        <view class="messPerson conmmon {{item.message30 ==null?'none':''}}">{{item.message30}}</view> 
+      </view>
+  </view> 
+
+  <view class='back' hidden="{{currentTab !== 9}}">
+      <view style='height:1rpx;width:100%;'></view>
+      <view class='messList' wx:for="{{agenda[9].agendaDetails}}">
+        <view class='messTitle'>{{item.name}}</view>
+        <view class="messTime conmmon {{item.message1 ==null?'none':''}}">{{item.message1}}</view>
+        <view class="messPlace conmmon {{item.message2 ==null?'none':''}}">{{item.message2}}</view>
+        <view class="messPerson conmmon {{item.message3 ==null?'none':''}}">{{item.message3}}</view>
+        <view class="messPerson conmmon {{item.message4 ==null?'none':''}}">{{item.message4}}</view>
+        <view class="messPerson conmmon {{item.message5 ==null?'none':''}}">{{item.message5}}</view>
+        <view class="messPerson conmmon {{item.message6 ==null?'none':''}}">{{item.message6}}</view>
+        <view class="messPerson conmmon {{item.message7 ==null?'none':''}}">{{item.message7}}</view>
+        <view class="messPerson conmmon {{item.message8 ==null?'none':''}}">{{item.message8}}</view>
+        <view class="messPerson conmmon {{item.message9 ==null?'none':''}}">{{item.message9}}</view>
+        <view class="messPerson conmmon {{item.message10 ==null?'none':''}}">{{item.message10}}</view>
+        <view class="messPerson conmmon {{item.message11 ==null?'none':''}}">{{item.message11}}</view>
+        <view class="messPerson conmmon {{item.message12 ==null?'none':''}}">{{item.message12}}</view>
+        <view class="messPerson conmmon {{item.message13 ==null?'none':''}}">{{item.message13}}</view>
+        <view class="messPerson conmmon {{item.message14 ==null?'none':''}}">{{item.message14}}</view>
+        <view class="messPerson conmmon {{item.message15 ==null?'none':''}}">{{item.message15}}</view>
+        <view class="messPerson conmmon {{item.message16 ==null?'none':''}}">{{item.message16}}</view>
+        <view class="messPerson conmmon {{item.message17 ==null?'none':''}}">{{item.message17}}</view>
+        <view class="messPerson conmmon {{item.message18 ==null?'none':''}}">{{item.message18}}</view>
+        <view class="messPerson conmmon {{item.message19 ==null?'none':''}}">{{item.message19}}</view>
+        <view class="messPerson conmmon {{item.message20 ==null?'none':''}}">{{item.message20}}</view> 
+        <view class="messPerson conmmon {{item.message21 ==null?'none':''}}">{{item.message21}}</view>
+        <view class="messPerson conmmon {{item.message22 ==null?'none':''}}">{{item.message22}}</view>
+        <view class="messPerson conmmon {{item.message23 ==null?'none':''}}">{{item.message23}}</view>
+        <view class="messPerson conmmon {{item.message24 ==null?'none':''}}">{{item.message24}}</view>
+        <view class="messPerson conmmon {{item.message25 ==null?'none':''}}">{{item.message25}}</view>
+        <view class="messPerson conmmon {{item.message26 ==null?'none':''}}">{{item.message26}}</view>
+        <view class="messPerson conmmon {{item.message27 ==null?'none':''}}">{{item.message27}}</view>
+        <view class="messPerson conmmon {{item.message28 ==null?'none':''}}">{{item.message28}}</view>
+        <view class="messPerson conmmon {{item.message29 ==null?'none':''}}">{{item.message29}}</view>
+        <view class="messPerson conmmon {{item.message30 ==null?'none':''}}">{{item.message30}}</view> 
+      </view>
+  </view> 
+<view class='back' hidden="{{currentTab !== 10}}">
+      <view style='height:1rpx;width:100%;'></view>
+      <view class='messList' wx:for="{{agenda[10].agendaDetails}}">
+        <view class='messTitle'>{{item.name}}</view>
+        <view class="messTime conmmon {{item.message1 ==null?'none':''}}">{{item.message1}}</view>
+        <view class="messPlace conmmon {{item.message2 ==null?'none':''}}">{{item.message2}}</view>
+        <view class="messPerson conmmon {{item.message3 ==null?'none':''}}">{{item.message3}}</view>
+        <view class="messPerson conmmon {{item.message4 ==null?'none':''}}">{{item.message4}}</view>
+        <view class="messPerson conmmon {{item.message5 ==null?'none':''}}">{{item.message5}}</view>
+        <view class="messPerson conmmon {{item.message6 ==null?'none':''}}">{{item.message6}}</view>
+        <view class="messPerson conmmon {{item.message7 ==null?'none':''}}">{{item.message7}}</view>
+        <view class="messPerson conmmon {{item.message8 ==null?'none':''}}">{{item.message8}}</view>
+        <view class="messPerson conmmon {{item.message9 ==null?'none':''}}">{{item.message9}}</view>
+        <view class="messPerson conmmon {{item.message10 ==null?'none':''}}">{{item.message10}}</view>
+        <view class="messPerson conmmon {{item.message11 ==null?'none':''}}">{{item.message11}}</view>
+        <view class="messPerson conmmon {{item.message12 ==null?'none':''}}">{{item.message12}}</view>
+        <view class="messPerson conmmon {{item.message13 ==null?'none':''}}">{{item.message13}}</view>
+        <view class="messPerson conmmon {{item.message14 ==null?'none':''}}">{{item.message14}}</view>
+        <view class="messPerson conmmon {{item.message15 ==null?'none':''}}">{{item.message15}}</view>
+        <view class="messPerson conmmon {{item.message16 ==null?'none':''}}">{{item.message16}}</view>
+        <view class="messPerson conmmon {{item.message17 ==null?'none':''}}">{{item.message17}}</view>
+        <view class="messPerson conmmon {{item.message18 ==null?'none':''}}">{{item.message18}}</view>
+        <view class="messPerson conmmon {{item.message19 ==null?'none':''}}">{{item.message19}}</view>
+        <view class="messPerson conmmon {{item.message20 ==null?'none':''}}">{{item.message20}}</view> 
+        <view class="messPerson conmmon {{item.message21 ==null?'none':''}}">{{item.message21}}</view>
+        <view class="messPerson conmmon {{item.message22 ==null?'none':''}}">{{item.message22}}</view>
+        <view class="messPerson conmmon {{item.message23 ==null?'none':''}}">{{item.message23}}</view>
+        <view class="messPerson conmmon {{item.message24 ==null?'none':''}}">{{item.message24}}</view>
+        <view class="messPerson conmmon {{item.message25 ==null?'none':''}}">{{item.message25}}</view>
+        <view class="messPerson conmmon {{item.message26 ==null?'none':''}}">{{item.message26}}</view>
+        <view class="messPerson conmmon {{item.message27 ==null?'none':''}}">{{item.message27}}</view>
+        <view class="messPerson conmmon {{item.message28 ==null?'none':''}}">{{item.message28}}</view>
+        <view class="messPerson conmmon {{item.message29 ==null?'none':''}}">{{item.message29}}</view>
+        <view class="messPerson conmmon {{item.message30 ==null?'none':''}}">{{item.message30}}</view> 
+      </view>
+  </view> 
+
+</view>  
+<view style='height:80rpx;'></view>
+</view>

@@ -1,0 +1,15 @@
+index
+  首页  
+traffic  交通页
+stay   
+  住宿页
+agenda       议程页
+  
+warm	系统消息详情页
+message  系统消息页
+jingqu 
+   景区详情页
+meeting  会议简介页
+messages  留言页
+leaveingmessage 写留言页
+news  新闻动态详情页
